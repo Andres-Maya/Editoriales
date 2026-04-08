@@ -1,3 +1,3 @@
 ### Diagrama de clases:
 
-<img width="711" height="451" alt="Diagrama sin título drawio" src="https://github.com/user-attachments/assets/fdbccad1-07e3-4e7a-bbc4-276b9912e427" />
+![WhatsApp Image 2026-04-08 at 6 09 15 PM](https://github.com/user-attachments/assets/0d839956-3545-41c4-8af7-1871e6264637)
