@@ -1,45 +1,35 @@
-import Model.Libro;
-import Model.Disco;
-
+import Model.Idioma;
+import Model.Video;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        String titulo;
-        double precio;
-        int anioPublicacion;
-        int numeroPaginas;
-
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Bienvenido a la editorial");
-        System.out.println("Vamos a crear un libro!!");
-        System.out.println("Ingrese el título del libro");
-        titulo = input.nextLine();
-        System.out.println("Ingrese el precio del libro");
-        precio = input.nextDouble();
-        System.out.println("Ingrese el año de publicación del libro");
-        anioPublicacion = input.nextInt();
-        System.out.println("Ingrese el número de páginas del libro");
-        numeroPaginas = input.nextInt();
+        System.out.println("Ingrese el título del video:");
+        String titulo = input.nextLine();
 
-        Libro miLibro = new Libro(titulo, precio, anioPublicacion, numeroPaginas);
+        System.out.println("Ingrese el precio del video:");
+        double precio = input.nextDouble();
+        input.nextLine();
 
-        System.out.println(miLibro);
+        System.out.println("Ingrese el idioma (ESPANIOL, INGLES, ALEMAN, PORTUGUES, FRANCES):");
+        String entradaIdioma = input.nextLine().toUpperCase();
 
-        float duracionMinutos;
+        Idioma idioma;
+        try {
+            idioma = Idioma.valueOf(entradaIdioma);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Idioma no válido, se asignará ESPANIOL por defecto.");
+            idioma = Idioma.ESPANIOL;
+        }
 
-        System.out.println("Ingrese el título del Disco");
-        titulo = input.nextLine();
-        System.out.println("Ingrese el precio del Disco");
-        precio = input.nextDouble();
-        System.out.println("Ingrese la duración en minutos del Disco");
-        duracionMinutos = input.nextInt();
+        System.out.println("Ingrese la duración en horas del video:");
+        float duracionHoras = input.nextFloat();
 
-        Disco miDisco = new Disco(titulo, precio, duracionMinutos);
+        Video miVideo = new Video(titulo, precio, duracionHoras, idioma);
 
-        System.out.println(miDisco);
+        System.out.println("\n--- Resultado ---");
+        System.out.println(miVideo);
     }
-
 }

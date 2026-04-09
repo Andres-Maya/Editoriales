@@ -38,7 +38,7 @@ public class Libro extends Publicacion{
         return "Libro{" +
                 "Titulo='" + getTitulo() +
                 ", Precio=" + getPrecio() +
-                "Año de publicacion: " + anioPublicacion +
+                ", Año de publicacion: " + anioPublicacion +
                 ", numero de páginas: " + numeroPaginas +
                 "}";
     }
